@@ -1,0 +1,157 @@
+/* products*/
+.section {
+  &--pad-products {
+    padding: 0 0 145px 0;
+
+    @media screen and (max-width: 767px) {
+      padding-bottom: 70px;
+    }
+  }
+}
+.products-carousel {
+  padding: 75px 0 80px 0;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+
+  @media screen and (max-width: 575px) {
+    padding: 30px 0 50px 0;
+  }
+  .slick-slide {
+    float: left;
+    margin: 0 20px;
+  }
+  .slick-list {
+    overflow: hidden;
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+  .slick-arrow {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 58px;
+    height: 24px;
+    padding: 0;
+    z-index: 1;
+    overflow: hidden;
+    color: transparent;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+
+    &:focus::before,
+    &:hover::before {
+      color: lighten($colorText, 15%);
+    }
+    &::before {
+      font-size: 60px;
+      line-height: 14px;
+      text-align: center;
+      color: $colorText;
+    }
+    &.slick-prev {
+      transform: translateX(calc(-100% - 30px));
+
+      &::before {
+        content: "\2190";
+      }
+    }
+    &.slick-next {
+      transform: translateX(30px);
+
+      &::before {
+        content: "\2192";
+      }
+    }
+  }
+}
+.product {
+  outline: none;
+
+  &__main {
+    height: 430px;
+    border: 1px solid $colorSecond;
+    box-sizing: border-box;
+    background-color: $colorLightMain;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 35px;
+    position: relative;
+  }
+  &__rating {
+    margin: 0 0 18px 0;
+  }
+  &__name {
+    font-size: 18px;
+    color: $colorDarkMain;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 0 35px 0;
+  }
+  &__img {
+    display: block;
+    margin: auto 0;
+  }
+  &__footer {
+    height: 74px;
+    background-color: #f1f1f1;
+    border-left: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    padding: 0 0 0 30px;
+    display: flex;
+    align-items: center;
+  }
+  &__price {
+    flex-grow: 1;
+    font-size: 18px;
+    color: $colorDarkMain;
+    text-transform: uppercase;
+  }
+  &__btn {
+    width: 30%;
+    height: calc(100% + 1px);
+    border: none;
+    background-color: $colorText;
+    padding: 0 2px;
+    margin-bottom: -1px;
+    font-family: inherit;
+    font-size: 20px;
+    color: $colorLightMain;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+
+    @media screen and (max-width: 1399px) {
+      width: 45%;
+    }
+    &:focus,
+    &:hover {
+      box-shadow: 0 0 15px $colorLightMain inset;
+    }
+  }
+  &__tirer {
+    display: inline-block;
+    width: 45px;
+    height: 2px;
+    background-color: $colorLight;
+    vertical-align: middle;
+    margin: 0 0 0 20px;
+
+    @media screen and (max-width: 767px) {
+      margin-left: 5px;
+    }
+  }
+  &__tirer-bougth {
+    display: none;
+    border-left: 2px solid $colorLight;
+    padding: 0 0 0 15px;
+    margin: 0 0 0 20px;
+
+    @media screen and (max-width: 767px) {
+      margin-left: 5px;
+    }
+  }
+}

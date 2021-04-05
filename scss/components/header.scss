@@ -1,0 +1,362 @@
+/* header */
+.section {
+  &--pos-header {
+    position: fixed;
+    z-index: 1500;
+    width: 100%;
+    background-color: transparent;
+  }
+}
+
+.header {
+  // height: 82px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  color: $colorLightMain;
+  border-bottom: 1px solid rgba($colorLightMain, 0.6);
+  box-sizing: border-box;
+
+  &--scroll {
+    background-color: $colorSecond;
+  }
+
+  &__coll {
+    color: $colorLightMain;
+
+    &--logo {
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    &--nav,
+    &--menu {
+      @media screen and (max-width: 991px) {
+        display: none;
+        width: 100%;
+        order: 1;
+      }
+    }
+
+    &--burger {
+      width: 30px;
+      height: 30px;
+      font-size: 20px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      position: relative;
+      margin: 0 15px;
+
+      span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 3px;
+        width: 100%;
+        background: #fff;
+
+        &::before,
+        &::after {
+          content: "";
+          width: 100%;
+          height: 3px;
+          background: #fff;
+          display: block;
+          position: absolute;
+        }
+
+        &::before {
+          top: -9px;
+        }
+
+        &::after {
+          bottom: -9px;
+        }
+      }
+
+      @media screen and (min-width: 992px) {
+        display: none;
+      }
+    }
+
+    &--clicked {
+      color: $colorHeader;
+    }
+  }
+}
+
+.nav {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 0 27px;
+  height: 100%;
+  display: flex;
+
+  @media screen and (max-width: 1199px) {
+    margin-left: 17px;
+  }
+  @media screen and (max-width: 991px) {
+    margin-left: 0;
+  }
+
+  &__block {
+    margin: 0 14px;
+    text-align: center;
+
+    @media screen and (max-width: 1199px) {
+      margin: 0 10px;
+    }
+    @media screen and (max-width: 991px) {
+      flex-grow: 1;
+      margin: 25px 14px;
+    }
+    @media screen and (max-width: 479px) {
+      margin: 15px 5px;
+    }
+  }
+
+  &__link {
+    font-size: 16px;
+    color: inherit;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0 10px;
+    position: relative;
+
+    @media screen and (max-width: 479px) {
+      padding: 0;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 100%;
+      height: 2px;
+      background-color: $colorHeader;
+      transform: scale(0);
+      transition-duration: 0.3s;
+    }
+
+    &:focus::after,
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}
+
+.logo {
+  font-size: 30px;
+  color: $colorLightMain;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition-duration: 0.3s;
+
+  &:focus,
+  &:hover {
+    color: $colorHeader;
+  }
+}
+
+.menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  position: relative;
+
+  @media screen and (max-width: 991px) {
+    border-top: 1px solid rgba($colorLightMain, 0.6);
+  }
+
+  &__block {
+    padding: 0 35px;
+    line-height: 80px;
+    border-left: 1px solid rgba($colorLightMain, 0.6);
+    font-size: 16px;
+    color: inherit;
+    text-align: center;
+    text-transform: uppercase;
+
+    @media screen and (max-width: 1199px) {
+      padding: 0 20px;
+    }
+    @media screen and (max-width: 991px) {
+      flex-grow: 1;
+    }
+    @media screen and (max-width: 767px) {
+      line-height: 40px;
+    }
+    @media screen and (max-width: 767px) {
+      padding: 0 10px;
+    }
+    @media screen and (max-width: 479px) {
+      padding: 0 5px !important;
+    }
+
+    &:last-child {
+      padding-right: 20px;
+    }
+
+    &--search:hover {
+      .menu__svg {
+        transform: rotate(90deg);
+        @media screen and (max-width: 479px) {
+          display: none;
+        }
+      }
+
+      .menu__search-input {
+        width: 200px;
+        padding: 3px;
+
+        @media screen and (max-width: 575px) {
+          width: 150px;
+        }
+        @media screen and (max-width: 479px) {
+          width: 100px;
+        }
+
+        &:focus,
+        &:hover {
+          border: 1px solid $colorHeader;
+        }
+      }
+
+      .menu__btn {
+        border-color: $colorLightMain;
+
+        &:focus,
+        &:hover {
+          border-color: $colorHeader;
+        }
+      }
+    }
+  }
+
+  &__login {
+    font-size: inherit;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:focus,
+    &:hover {
+      color: $colorHeader;
+    }
+  }
+
+  &__svg {
+    width: 32px;
+    height: 32px;
+    fill: $colorLightMain;
+    vertical-align: middle;
+    transition-duration: 0.3s;
+  }
+
+  &__search-form {
+    display: inline-block;
+  }
+
+  &__search-input {
+    width: 0;
+    font-size: 14px;
+    font-weight: 300;
+    color: $colorDarkMain;
+    border: transparent;
+    outline: none;
+    padding: 3px 0;
+    margin: 0 0 0 5px;
+    transition-duration: 0.3s;
+  }
+
+  &__btn {
+    font-family: inherit;
+    font-size: 16px;
+    color: inherit;
+    text-transform: inherit;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 3px;
+    cursor: pointer;
+    outline: none;
+    transition-duration: 0.3s;
+  }
+}
+
+.login-form {
+  width: 100%;
+  border: 1px solid transparent;
+  border-top: none;
+  border-right: none;
+  box-sizing: border-box;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &--show {
+    display: block;
+  }
+
+  &--scroll {
+    background-color: $colorSecond;
+    border-color: rgba($colorDarkMain, 0.6);
+  }
+
+  &__label {
+    display: inline-block;
+    color: $colorDarkMain;
+    width: 100%;
+    line-height: 1;
+    margin: 10px 5px 10px 0;
+    vertical-align: middle;
+    text-align: left;
+  }
+
+  &__input {
+    width: 100%;
+    display: block;
+    font-size: 14px;
+    font-weight: 300;
+    color: $colorDarkMain;
+    border: 1px solid $colorDarkMain;
+    outline: none;
+    height: 30px;
+    padding: 3px;
+    margin: 5px 0 0 0;
+
+    &:focus,
+    &:hover {
+      border: 1px solid $colorHeader;
+    }
+  }
+
+  &__btn {
+    font-family: inherit;
+    height: 30px;
+    width: 30px;
+    margin: 0;
+    color: $colorDarkMain;
+    line-height: 1;
+    text-transform: uppercase;
+    vertical-align: middle;
+    border: 2px solid $colorDarkMain;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:focus,
+    &:hover {
+      color: $colorHeader;
+      border-color: $colorHeader;
+    }
+  }
+}

@@ -1,0 +1,136 @@
+/* intro */
+.section {
+  &--bg-intro {
+    background-position: center;
+    background-size: cover;
+    background-image: url(../images/intro/bg-intro.jpg);
+    height: 100vh;
+    position: relative;
+  }
+}
+.intro {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  max-width: 50%;
+  margin: 0 0 0 auto;
+  color: $colorLight;
+
+  @media screen and (max-width: 1199px) {
+    max-width: 60%;
+  }
+  @media screen and (max-width: 991px) {
+    max-width: 80%;
+  }
+  @media screen and (max-width: 767px) {
+    max-width: 100%;
+  }
+  @media screen and (max-width: 575px) {
+    align-items: center;
+    right: 0;
+    width: 100%;
+  }
+  &__title {
+    font-size: 55px;
+    color: inherit;
+    line-height: 75px;
+    text-align: right;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 15px rgba(0, 0, 0, 0.5);
+    letter-spacing: 10px;
+    margin: 0 0 27px 0;
+
+    @media screen and (max-width: 767px) {
+      font-size: 48px;
+      text-align: center;
+    }
+    @media screen and (max-width: 479px) {
+      font-size: 42px;
+      letter-spacing: 5px;
+    }
+  }
+  &__subtitle {
+    font-size: 24px;
+    font-weight: 300;
+    color: inherit;
+    text-transform: capitalize;
+    letter-spacing: 5px;
+    margin: 0 0 55px 0;
+
+    @media screen and (max-width: 479px) {
+      font-size: 20px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  }
+  &__start-shopping {
+    font-size: 20px;
+    color: inherit;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    width: 270px;
+    line-height: 70px;
+    border: 1px solid rgba($colorLight, 0.5);
+    box-sizing: border-box;
+    margin: 0 0 25px 0;
+
+    &:focus,
+    &:hover {
+      box-shadow: 0px 0px 20px rgba($colorLight, 0.5) inset;
+
+      .intro__tirer {
+        transform: translateX(10px);
+      }
+      .intro__tirer::before {
+        transform: rotate(25deg);
+      }
+      .intro__tirer::after {
+        transform: rotate(-25deg);
+      }
+    }
+  }
+  &__tirer {
+    display: inline-block;
+    width: 45px;
+    height: 2px;
+    background-color: $colorLight;
+    vertical-align: middle;
+    margin: 0 0 0 10px;
+    position: relative;
+    transition-duration: 0.3s;
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 2px;
+      background-color: inherit;
+      transform-origin: top right;
+      transition-duration: 0.3s;
+    }
+  }
+  &__see-all {
+    font-size: 18px;
+    font-weight: 300;
+    color: inherit;
+    text-decoration: none;
+    letter-spacing: 5px;
+
+    &::after {
+      content: "\2192";
+      padding: 0 0 0 10px;
+    }
+    &:focus,
+    &:hover {
+      text-shadow: 0 0 10px $colorLight;
+    }
+  }
+}

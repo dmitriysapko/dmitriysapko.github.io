@@ -1,0 +1,153 @@
+/* section */
+.section {
+  background-color: $colorLight;
+
+  &__title {
+    font-size: 30px;
+    color: $colorDarkMain;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 4px;
+    padding: 0 15px;
+
+    @media screen and (max-width: 575px) {
+      font-size: 28px;
+    }
+    @media screen and (max-width: 479px) {
+      font-size: 24px;
+      letter-spacing: 2px;
+    }
+  }
+
+  &__aside {
+    position: absolute;
+    left: 0;
+    bottom: 188px;
+    font-size: 26px;
+    color: $colorLightMain;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    transform: rotate(-90deg);
+    animation: move 0.5s ease-in-out;
+
+    @media screen and (max-width: 1199px) {
+      left: -50px;
+    }
+    @media screen and (max-width: 767px) {
+      font-size: 18px;
+      bottom: 163px;
+      left: -100px;
+    }
+    @media screen and (max-width: 575px) {
+      display: none;
+    }
+  }
+
+  &__aside-reverse {
+    position: absolute;
+    left: 0;
+    bottom: 120px;
+    font-size: 24px;
+    font-weight: 300;
+    color: $colorLightMain;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    transform: rotate(90deg) translateX(500px);
+
+    @media screen and (max-width: 767px) {
+      left: -20px;
+    }
+    @media screen and (max-width: 575px) {
+      display: none;
+    }
+
+    &--animate {
+      animation: move-reverse 0.5s ease-in-out;
+      transform: rotate(90deg) translateX(0);
+    }
+  }
+
+  &__aside-tirer {
+    display: inline-block;
+    width: 100px;
+    height: 2px;
+    background-color: $colorLightMain;
+    vertical-align: super;
+    margin: 0 30px 0 0;
+  }
+
+  &__scroll {
+    position: absolute;
+    left: 50%;
+    bottom: 23px;
+    transform: translateX(-50%);
+    cursor: pointer;
+    transition-duration: 0.3s;
+
+    &:hover {
+      bottom: 20px;
+    }
+  }
+
+  &__scroll-svg {
+    display: block;
+    width: 32px;
+    height: 32px;
+    fill: $colorLightMain;
+    animation: scroll 2s ease infinite;
+  }
+}
+
+.mainer {
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+
+  &--pos {
+    height: 100%;
+    position: relative;
+  }
+}
+
+.rating {
+  width: 96px;
+  height: 15px;
+  background-image: url(../images/products/sprite.png);
+  background-position: 0 15px;
+
+  &__full {
+    width: 100%;
+    height: 100%;
+    background-image: inherit;
+  }
+}
+
+.card-remove {
+  visibility: hidden;
+  margin: 0 0 0 2px;
+  cursor: pointer;
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(-90deg) translateX(-500px);
+  }
+  100% {
+    transform: rotate(-90deg) translateX(0);
+  }
+}
+
+@keyframes move-reverse {
+  0% {
+    transform: rotate(90deg) translateX(500px);
+  }
+  100% {
+    transform: rotate(90deg) translateX(0);
+  }
+}
+
+@keyframes scroll {
+  50% {
+    transform: translateY(20px);
+  }
+}

@@ -1,0 +1,112 @@
+/* testimonials  */
+.section {
+  &--bg-testimonials {
+    background-image: url(../images/testimonials/bg-testimonials.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+}
+.testimonials-carousel {
+  max-width: 750px;
+  height: 800px;
+  margin: 0 auto;
+
+  @media screen and (max-width: 767px) {
+    height: 600px;
+  }
+  .slick-slide {
+    float: left;
+  }
+  .slick-list {
+    overflow: hidden;
+  }
+  .slick-arrow {
+    position: absolute;
+    left: 50%;
+    bottom: -1px;
+    transform: translateX(-50%);
+    width: 130px;
+    height: 100px;
+    box-sizing: border-box;
+    padding: 0;
+    z-index: 1000;
+    overflow: hidden;
+    color: transparent;
+    border: 1px solid $colorLightMain;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+
+    @media screen and (max-width: 767px) {
+      width: 100px;
+      height: 70px;
+    }
+    &:focus,
+    &:hover {
+      box-shadow: 0px 0px 40px rgba($colorLight, 0.5) inset;
+    }
+    &::before {
+      display: block;
+      font-size: 60px;
+      width: 100%;
+      text-align: center;
+      color: $colorLightMain;
+    }
+    &.slick-prev {
+      transform: translateX(-100%);
+
+      &::before {
+        content: "\2190";
+      }
+    }
+    &.slick-next {
+      transform: translateX(0%);
+
+      &::before {
+        content: "\2192";
+      }
+    }
+  }
+}
+.testimonials {
+  margin: 264px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (max-width: 767px) {
+    margin-top: 100px;
+  }
+  @media screen and (max-width: 479px) {
+    margin-top: 50px;
+  }
+  &__text {
+    font-size: 22px;
+    font-weight: 300;
+    color: $colorLightMain;
+    line-height: 40px;
+    text-align: center;
+    letter-spacing: 4px;
+    margin: 35px 0 30px 0;
+
+    @media screen and (max-width: 479px) {
+      font-size: 16px;
+      line-height: 35px;
+    }
+  }
+  &__autor {
+    font-size: 24px;
+    color: $colorLightMain;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  &__tirer {
+    display: inline-block;
+    width: 45px;
+    height: 2px;
+    background-color: $colorLightMain;
+    vertical-align: middle;
+    margin: 0 15px 0 0;
+  }
+}

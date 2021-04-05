@@ -1,0 +1,142 @@
+/* footer */
+.section {
+  &--pad-footer {
+    padding: 200px 0 55px 0;
+
+    @media screen and (max-width: 767px) {
+      padding: 120px 0 30px 0;
+    }
+  }
+}
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 0 55px 0;
+  margin: 0 -15px;
+
+  &__col {
+    width: 370px;
+    flex-grow: 1;
+    margin: 0 15px;
+
+    @media screen and (max-width: 1199px) {
+      width: 200px;
+    }
+    @media screen and (max-width: 767px) {
+      width: 100%;
+      max-width: none;
+      margin: 0 auto;
+      padding-bottom: 20px;
+    }
+    &--aside {
+      padding: 95px 0 0 0;
+      border-top: 2px solid $colorText;
+
+      @media screen and (max-width: 767px) {
+        width: 50%;
+        order: 1;
+        padding: 40px 0 0 0;
+        margin: 0;
+      }
+    }
+  }
+  &__logo {
+    text-align: center;
+    transform: translateY(-50%);
+  }
+  &__tirer {
+    width: 2px;
+    height: 55px;
+    background-color: $colorText;
+    margin: 0 auto 25px auto;
+
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+}
+.footer-logo {
+  font-size: 60px;
+  color: $colorText;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:focus,
+  &:hover {
+    color: darken($colorText, 10%);
+  }
+}
+.footer-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+
+  &__item {
+    margin: 0 0 25px 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__link {
+    font-size: 14px;
+    font-weight: 300;
+    color: $colorText;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 3px;
+
+    &:focus,
+    &:hover {
+      font-weight: 400;
+    }
+  }
+}
+.social {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+  display: flex;
+  justify-content: center;
+  transform: translateX(5px);
+
+  @media screen and (max-width: 767px) {
+    transform: translateX(0);
+  }
+  &__block {
+    margin: 0 25px;
+  }
+  &__link {
+    font-size: 20px;
+    color: $colorText;
+    text-decoration: none;
+
+    &--fb {
+      &:focus,
+      &:hover {
+        color: #3b5998;
+      }
+    }
+    &--tw {
+      &:focus,
+      &:hover {
+        color: #1da1f2;
+      }
+    }
+    &--yt {
+      &:focus,
+      &:hover {
+        color: #c4302b;
+      }
+    }
+  }
+}
+.footer-floor {
+  font-size: 11px;
+  font-weight: 300;
+  color: $colorText;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
